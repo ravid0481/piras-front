@@ -75,7 +75,7 @@ function Login() {
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:8080/api/login", {
+      const res = await fetch("https://piras-back-2.onrender.com/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim(), password: password.trim() }),

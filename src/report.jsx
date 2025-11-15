@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 // import { getAuth, onAuthStateChanged } from "firebase/auth"; // optional
 import "./report.css";
 
-const API_BASE = process.env.REACT_APP_API_BASE ?? "http://localhost:8080";
+const API_BASE = process.env.REACT_APP_API_BASE ?? "https://piras-back-2.onrender.com";
 
 export default function ReportIncident() {
   const [email, setEmail] = useState("");
