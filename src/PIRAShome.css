@@ -1,0 +1,163 @@
+/* ----------------------------------------------------- */
+:root{
+  --bg: #000000;
+  --bg-2: #d2d8e5;
+  --panel: rgba(255,255,255,0.05);
+  --text: #f4efef;
+  --muted: rgba(255,255,255,0.78);
+  --border: rgba(255,255,255,0.12);
+  --primary: #4285f4;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(#0a0f1d,#0f1b34 40%,#0a0f1d);
+  color:var(--text);
+  font-family:Inter,system-ui,Arial,sans-serif
+}
+
+.page{min-height:100%;display:flex;flex-direction:column}
+.container{max-width:1120px;margin:0 auto;padding:0 16px}
+.section{padding:56px 0}
+.section-title{font-size:22px;margin:0 0 12px}
+.small{font-size:14px}
+.muted{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr;gap:24px}
+.grid3{display:grid;grid-template-columns:1fr;gap:16px}
+.grid4{display:grid;grid-template-columns:1fr;gap:16px}
+
+@media(min-width:768px){
+  .grid2{grid-template-columns:1fr 1fr}
+  .grid3{grid-template-columns:repeat(3,1fr)}
+  .grid4{grid-template-columns:repeat(4,1fr)}
+}
+
+/* Hero */
+.hero{
+  padding:76px 0 72px;
+  border-bottom:1px solid var(--border);
+  background:
+    radial-gradient(1200px 400px at 20% -10%, rgba(66,133,244,0.22), transparent),
+    radial-gradient(1000px 300px at 80% 10%, rgba(255,255,255,0.06), transparent)
+}
+.hero-title{font-size:36px;line-height:1.15;margin:10px 0 8px}
+.badge{
+  display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  border:1px solid var(--border);padding:6px 10px;border-radius:999px;background:var(--panel)
+}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.btn{
+  display:inline-block;padding:10px 14px;border-radius:14px;font-weight:600;
+  border:1px solid var(--border);text-decoration:none;color:var(--text);background:var(--panel)
+}
+.btn:hover{filter:brightness(1.08)}
+.btn-primary{background:var(--primary);border-color:rgba(0,0,0,0.2)}
+.btn-ghost{background:transparent}
+
+/* Hero right feature grid */
+.hero-right{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.feature-icon{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:12px;text-align:center}
+.feature-icon p{margin:6px 0 0;font-size:12px;color:var(--muted)}
+
+/* Cards */
+.cards{gap:16px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}
+.card-pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,0.08);padding:6px 10px;border-radius:12px}
+.card-pill-text{font-size:12px;font-weight:600}
+.card-text{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.6}
+
+/* Steps */
+.steps{gap:16px}
+.step{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}
+.step-badge{width:36px;height:36px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:700}
+.step-title{margin:8px 0 0;font-size:16px}
+
+/* ===== Democracy panel ===== */
+.panel{ /* base so your new classes have something to attach to */
+  border-radius:16px;
+  background:var(--panel);
+  border:1px solid var(--border);
+}
+/* Make democracy panel match the top box */
+.panel--boxed {
+  /* same look as your .cta */
+  background: linear-gradient(135deg, rgba(66,133,244,0.28), rgba(99,102,241,0.24));
+  border: 1px solid var(--border);
+  border-radius: 28px;              /* bigger corners like the top */
+  padding: 32px 28px;               /* a bit more breathing room */
+  box-shadow: 0 14px 40px rgba(0,0,0,0.28);
+}
+
+/* Tighter split + nicer typesetting */
+.panel-head--split {
+  grid-template-columns: 1.1fr 1.9fr; /* keeps the para on one line more often */
+  gap: 28px;
+}
+.quote {
+  font-size: clamp(1.6rem, 3vw, 2.4rem); /* closer to the big headline */
+  line-height: 1.15;
+  margin: 0;
+}
+.lead {
+  margin: 0;
+  line-height: 1.7;
+  max-width: 60ch;                   /* prevents the line from stretching too wide */
+}
+
+/* Tiles to match style and height */
+.tiles { margin-top: 24px; }
+.tiles .tile {
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 18px 20px;
+  min-height: 88px;                  /* consistent height */
+  display: flex; align-items: center;
+}
+
+/* Match mobile behavior of the top box */
+@media (max-width: 900px) {
+  .panel-head--split { grid-template-columns: 1fr; }
+  .quote { font-size: clamp(1.4rem, 5vw, 2rem); }
+  .lead { max-width: none; }
+}
+/* Center all text and content in the democracy section */
+.text-center {
+  text-align: center;
+}
+
+.text-center .panel-head--split {
+  display: block;          /* remove the left-right split layout */
+}
+
+.text-center .quote {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.text-center .lead {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+/* Center the tiles neatly below the paragraph */
+.text-center .tiles {
+  justify-items: center;
+}
+
+.text-center .tiles .tile {
+  width: 100%;
+  max-width: 340px;
+}
+
+.cta{
+  background:linear-gradient(135deg, rgba(66,133,244,0.28), rgba(99,102,241,0.24));
+  border:1px solid var(--border);border-radius:22px;padding:22px;text-align:center
+}
+.cta h2{margin:0 0 8px;font-size:24px}
+
+/* Footer */
+.footer{border-top:1px solid var(--border);text-align:center;padding:20px 0;color:rgba(255,255,255,0.7);font-size:13px}

@@ -1,0 +1,220 @@
+:root {
+  --bg: #0b1220;
+  --panel: rgba(255,255,255,.05);
+  --text: #fff;
+  --muted: rgba(255,255,255,.75);
+  --border: rgba(255,255,255,.15);
+  --primary: #4285f4;
+}
+
+/* ---------- PAGE LAYOUT ---------- */
+.ri-page {
+  min-height: 100dvh;
+  background: linear-gradient(#0a0f1d,#0c1424 40%,#0a0f1d);
+  color: var(--text);
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 980px) {
+  .ri-page {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* ---------- CARD CONTAINER ---------- */
+.ri-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+/* ---------- CATEGORY FIELD (v1 classes) ---------- */
+
+.ri-row1 {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+/* label styling */
+.ri-label1 {
+  font-size: 13px;
+  opacity: .95;
+  color: #dbe4ff; /* light label text */
+}
+
+/* select styling */
+.ri-input1 {
+  color: #fff; /* selected text color */
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  /* make it consistent across browsers */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color-scheme: dark;
+
+  /* custom dropdown arrow */
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 36px; /* space for arrow */
+}
+
+/* focus style */
+.ri-input1:focus {
+  outline: 2px solid #7aa2ff33;
+  border-color: #7aa2ff;
+  background: rgba(255,255,255,.12);
+}
+
+/* dropdown rows (in most browsers) */
+.ri-input1 option {
+  background: #0b1220; /* dark background */
+  color: #fff;         /* visible text */
+}
+.ri-input1 option:checked {
+  background: #1f3a8a; /* highlight color */
+  color: #fff;
+}
+
+/* remove old browser default arrow */
+.ri-input1::-ms-expand { display: none; }
+1
+.ri-title { margin: 0 0 6px; font-size: 24px; }
+.ri-subtitle { margin: 0 0 10px; font-size: 20px; }
+
+/* ---------- FORM ELEMENTS ---------- */
+.ri-row { display: grid; gap: 6px; margin: 10px 0; }
+
+.ri-label {
+  font-size: 13px;
+  opacity: .95;
+  color: #dbe4ff; /* light label */
+}
+
+.ri-hint {
+  font-size: 13px;
+  margin: 2px 0 0;
+  color: #9aa3b2; /* softer hint text */
+}
+
+/* Inputs & textarea */
+.ri-input,
+.ri-textarea {
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.ri-textarea { min-height: 100px; resize: vertical; }
+
+.ri-input::placeholder,
+.ri-textarea::placeholder {
+  color: #b0b8c4;
+  opacity: 1;
+}
+
+.ri-input:focus,
+.ri-textarea:focus {
+  outline: 2px solid #7aa2ff33;
+  border-color: #7aa2ff;
+  background: rgba(255,255,255,.12);
+}
+
+/* ---- SELECT (separate class) ---- */
+.ri-select {
+  color: #fff; /* selected text in the closed state */
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  /* cross-browser theming */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color-scheme: dark;
+
+  /* custom arrow */
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 36px;
+}
+
+.ri-select:focus {
+  outline: 2px solid #7aa2ff33;
+  border-color: #7aa2ff;
+  background: rgba(255,255,255,.12);
+}
+
+/* dropdown rows (most browsers honor this) */
+.ri-select option {
+  background: #0b1220; /* dark row */
+  color: #fff;
+}
+.ri-select option:checked {
+  background: #1f3a8a; /* highlight */
+  color: #fff;
+}
+
+/* old IE arrow (harmless elsewhere) */
+.ri-select::-ms-expand { display: none; }
+
+/* ---------- ACTIONS ---------- */
+.ri-actions { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+
+.ri-btn {
+  background: var(--primary);
+  border: 1px solid rgba(0,0,0,.2);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease background;
+}
+.ri-btn:hover { background: #5b9bff; }
+.ri-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.ri-status { font-size: 13px; color: var(--muted); }
+
+/* ---------- INCIDENT LIST ---------- */
+.ri-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+
+.ri-item {
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.ri-item-head { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+
+.ri-chip {
+  font-size: 12px; padding: 4px 8px; border-radius: 999px;
+  background: rgba(255,255,255,.08); border: 1px solid var(--border);
+}
+
+.ri-item-body { margin-top: 8px; }
+
+.ri-dim { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
