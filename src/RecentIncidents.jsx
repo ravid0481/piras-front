@@ -12,7 +12,7 @@ export default function AllIncidents() {
   const load = async () => {
     try {
       setStatus("Loading…");
-      const res = await fetch(`${API_BASE}/api/incidents/all`);
+      const res = await fetch("https://piras-back-2.onrender.com/api/incidents/all");
       if (!res.ok) throw new Error("Server " + res.status);
       const data = await res.json();
       setItems(data);
