@@ -239,18 +239,7 @@
 }
 
 /* FIXED — no transform used */
-.faneyepupil,
-.faneyeepupil {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: black;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  margin-top: -2.5px;
-  margin-left: -2.5px;
-}
+
 
 .fanmouth {
   width: 40px;
