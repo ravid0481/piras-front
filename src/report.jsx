@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-// import { getAuth, onAuthStateChanged } from "firebase/auth"; // optional
+
 import "./report.css";
 
 const API_BASE = process.env.REACT_APP_API_BASE ?? "https://piras-back-2.onrender.com";
@@ -18,15 +18,7 @@ export default function ReportIncident() {
   const [incidents, setIncidents] = useState([]);
   const [status, setStatus] = useState("");
 
-  // ---- optional Firebase email grab ----
-  // useEffect(() => {
-  //   const auth = getAuth();
-  //   return onAuthStateChanged(auth, (user) => {
-  //     if (user?.email) setEmail(user.email);
-  //   });
-  // }, []);
-
-  // fallback: localStorage
+  
   useEffect(() => {
     if (!email) {
       const stored = localStorage.getItem("piras_email");

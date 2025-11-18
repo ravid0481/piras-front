@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./RecentIncidents.css";
 
-const API_BASE = process.env.REACT_APP_API_BASE ?? "http://localhost:8080";
+const API_BASE = process.env.REACT_APP_API_BASE ?? "https://piras-back-2.onrender.com";
 
 export default function AllIncidents() {
   const [items, setItems] = useState([]);

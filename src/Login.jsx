@@ -72,7 +72,7 @@ function Login() {
  
   const handleLogin = async (e) => {
     e.preventDefault();
-    setMessage("");
+    
 
     try {
       const res = await fetch("https://piras-back-2.onrender.com/api/login", {
