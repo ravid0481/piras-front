@@ -229,8 +229,8 @@ function Login() {
           {message && <div style={{ color:"#000",fontWeight: "bold", marginTop:" 10 "}}>{message}</div>}
 
           <div className="options">
-            <label>
-              <input type="checkbox" style={{color:"#000"}} /> Remember me
+            <label  style={{fontcolor:"#000"}}>
+              <input type="checkbox" /> Remember me
             </label>
             <a href="#forgot">Forgot password?</a>
           </div>
