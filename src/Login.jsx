@@ -230,7 +230,7 @@ function Login() {
 
           <div className="options">
             <label>
-              <input type="checkbox" /> Remember me
+              <input type="checkbox" style={{color::"#000"}} /> Remember me
             </label>
             <a href="#forgot">Forgot password?</a>
           </div>
